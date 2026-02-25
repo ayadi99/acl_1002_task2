@@ -28,7 +28,12 @@ public class UserController {
     public String testUserController() {
         return "Hello from user Controller!";
     }
-
+    @GetMapping("/me")
+    public User getMe() {
+        // Returning a dummy User object
+        // Note: Replace the constructor arguments with the actual fields in your User model
+        return new User("1", 22, "dummy@example.com");
+    }
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
